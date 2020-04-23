@@ -12,7 +12,7 @@ namespace GradleBindings
             string repoFolder;
             var androidSdk = new[] { "ANDROID_HOME", "ANDROID_SDK", "ANDROID_SDK_ROOT" }
                 .Select(i => Environment.GetEnvironmentVariable(i))
-                .Concat(new[] { Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), @"AppData\Local\Android\sdk") })
+                .Concat(new[] { Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), @"C:\Program Files (x86)\Android\android-sdk") })
                 .Where(i => !string.IsNullOrWhiteSpace(i))
                 .OrderByDescending(i => Gradle.HasLocalRepositories(i, out repoFolder))
                 .FirstOrDefault();
